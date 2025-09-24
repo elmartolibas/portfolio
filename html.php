@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elmar Tolibas - Portfolio</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+      color: #333;
+      text-align: center;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      padding: 20px;
+    }
+    header img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      margin-bottom: 10px;
+    }
+    header h1 {
+      margin: 10px 0 5px;
+    }
+    header p {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #222;
+    }
+    nav a {
+      color: #fff;
+      padding: 15px 20px;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-size: 14px;
+    }
+    nav a:hover {
+      background: #444;
+    }
+    nav i {
+      font-size: 20px;
+      margin-bottom: 5px;
+    }
+    section {
+      padding: 40px 20px;
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background: #000;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    .back-btn:hover {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="images/profile/my_profile.jpg" alt="Profile Picture">
+    <h1>Elmar Tolibas</h1>
+    <p>3rd Year BSIT Student | ACLC College of Butuan</p>
+    <p>Portfolio</p>
+  </header>
+
+  <nav>
+    <a href="#" onclick="showSection('about')"><i>👤</i> About Me</a>
+    <a href="#" onclick="showSection('skills')"><i>🛠</i> Skills</a>
+    <a href="#" onclick="showSection('portfolio')"><i>🖼</i> Works</a>
+    <a href="#" onclick="showSection('projects')"><i>💻</i> Projects</a>
+    <a href="#" onclick="showSection('presentations')"><i>📊</i> Presentations</a>
+    <a href="#" onclick="showSection('resume')"><i>📄</i> Resume</a>
+  </nav>
+
+  <!-- About Me -->
+  <section id="about" class="active">
+    <h2>About Me</h2>
+    <p>Hello! I'm <b>Elmar Tolibas</b>, currently a 3rd Year BSIT student at ACLC College of Butuan. 
+    Aside from studying, I also work as a security guard at ACLC College campus.  
+    I’m passionate about web development, design, and creating digital content.</p>
+    <a href="#" class="back-btn" onclick="goBack()">⬅ Back to Dashboard</a>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills</h2>
+    <p>✔ Website Development (HTML, CSS, PHP)<br>
+       ✔ Profiling Information System (PHP)<br>
+       ✔ Graphic Design (Logos, Posters, Brochures, Tarpaulins)<br>
+       ✔ Tools: Adobe Illustrator, Photoshop, Canva</p>
+    <a href="#" class="back-btn" onclick="goBack()">⬅ Back to Dashboard</a>
+  </section>
+
+  <!-- Works -->
+  <section id="portfolio">
+    <h2>Sample Works</h2>
+    <div class="gallery">
+      <div class="item"><img src="images/works/MY_LOGO.jpg" alt="Logo Design"></div>
+      <div class="item"><img src="images/works/my_poster.jpg" alt="Poster Design"></div>
+      <div class="item"><img src="images/works/My_brochure.jpg" alt="Brochure Design"></div>
+      <div class="item"><img src="images/works/father's birthday.png" alt="Tarpaulin Design"></div>
+    </div>
+    <a href="#" class="back-btn" onclick="goBack()">⬅ Back to Dashboard</a>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="gallery">
+      <div class="item"><img src="images/projects/login.png" alt="Web Design"></div>
+      <div class="item"><img src="images/projects/dashboard.png" alt="System Development"></div>
+    </div>
+    <a href="#" class="back-btn" onclick="goBack()">⬅ Back to Dashboard</a>
+  </section>
+
+  <!-- Presentations -->
+  <section id="presentations">
+    <h2>Class Presentations</h2>
+    <div class="gallery">
+      <div class="item"><img src="images/presentations/presentation1.jpg" alt="Presentation 1"></div>
+      <div class="item"><img src="images/presentations/presentation2.jpg" alt="Presentation 2"></div>
+    </div>
+    <a href="#" class="back-btn" onclick="goBack()">⬅ Back to Dashboard</a>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>You can view or download my resume here:</p>
+    <a href="images/my_resume/Elmar_Tolibas_Resume.pdf" target="_blank" class="back-btn">📄 View Resume</a>
+    <br><br>
+    <a href="#" class="back-btn" onclick="goBack()">⬅ Back to Dashboard</a>
+  </section>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+    }
+    function goBack() {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(sec => sec.classList.remove("active"));
+      document.getElementById('about').classList.add("active"); // default dashboard
+    }
+  </script>
+</body>
+</html>
